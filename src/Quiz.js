@@ -1,5 +1,5 @@
 import { useLanguage } from "./context/language";
-import { quizData } from "./quizData";
+import { quizData as _quizData} from "./quizData";
 import React, { useState } from "react";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { Link } from "react-router-dom";
@@ -8,6 +8,17 @@ import { Link } from "react-router-dom";
 const TARGET_COUNT = 20;
 
 function Quiz(props) {
+	const shuffleQuizData = () => {
+		const newData = [..._quizData]
+		return newData.map(question => {
+			let newQuestion = {... question};
+			newQuestion.answers = shuffle([...newQuestion.answers]);
+			return newQuestion;
+		})
+	}
+
+	const [quizData, setQuizData] = useState(shuffleQuizData())
+
 	const [questionSeen, setQuestionsSeen] = useState([])
 	const randomIndex = () => {
 		var idx = -1;
@@ -23,11 +34,12 @@ function Quiz(props) {
 
 	const nextQuestion = () => {
 		setCorrectAnswerCount(correctAnswerCount + (quizData[currentIdx].answers[selected].correct ? 1 : 0));
-
+		setQuizData(shuffleQuizData());
 		questionSeen.push(currentIdx)
 		setQuestionsSeen(questionSeen);
 		setCurrentIdx(randomIndex());
 		setSelected(-1);
+		setQuizData(shuffleQuizData());
 	}
 
 	const reset = () => {
@@ -54,21 +66,21 @@ function ResultsPage(props) {
 	const textRu = percent > 50 ? "Вы успешно сдали экзамен на знание конституции" : "Вы не сдали экзамен на знание конституции. Пробуйте еще"
 
 	const style = {
-		'width' : "25%"
+		'width' : percent+"%"
 	}
 	return (
 		<div className="container">
 			<div className="px-4 py-2 my-5 text-center">
 				<h1 className="display-5 fw-bold">{percent}%</h1>
 				<div className="progress">
-					<div className={"progress-bar " + percent > 50 ? "bg-success" : "bg-warning"} role="progressbar" style={style} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+					<div className={"progress-bar " + (percent > 50 ? "bg-success" : "bg-warning")} role="progressbar" style={style} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 				</div>
 				<div className="col-lg-8 mx-auto mt-3">
 					<p className="lead mb-4">{language == "ro" ? textRo : textRu}</p>
 
 					<div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
 
-						<button type="button" className="btn btn-success btn-lg px-4 me-sm-3" onClick={() => reset()}>
+						<button type="button" className="btn btn-dark btn-lg px-4 me-sm-3" onClick={() => reset()}>
 							<i className="bi-arrow-clockwise me-3"></i>{language == "ro" ? "Examen nou" : "Повторить"}
 						</button>
 
@@ -168,4 +180,22 @@ function QuizData(props) {
 	)
 }
 
+
+function shuffle(array) {
+	let currentIndex = array.length,  randomIndex;
+  
+	// While there remain elements to shuffle...
+	while (currentIndex != 0) {
+  
+	  // Pick a remaining element...
+	  randomIndex = Math.floor(Math.random() * currentIndex);
+	  currentIndex--;
+  
+	  // And swap it with the current element.
+	  [array[currentIndex], array[randomIndex]] = [
+		array[randomIndex], array[currentIndex]];
+	}
+  
+	return array;
+  }
 export default Quiz;

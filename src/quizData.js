@@ -1424,7 +1424,7 @@ export const quizData = [
 		},
 		answers: [
 			{
-				"ro": "10 лет",
+				"ro": "10 ani",
 				"ru": "10 лет",
 				"correct": true
 			},
