@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { LanguageContext } from "./context/language";
+import Home from './Home';
 
+import './index.css';
+import Navbar from './Navbar';
+import Quiz from "./Quiz";
 function App() {
+  const [language, setLanguage] = useState("ro");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LanguageContext.Provider value={{ language, setLanguage}}>
+      <Router>
+        <div>
+          <Navbar />
+          <Route exact path="/" component={Home} />
+          <Route path="/quiz" component={Quiz} />
+
+        </div>
+      </Router>
+    </LanguageContext.Provider>
   );
 }
 
