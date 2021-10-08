@@ -2,12 +2,16 @@ import { useLanguage } from "./context/language";
 import { quizData } from "./quizData";
 import React, { useState } from "react";
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { Link } from "react-router-dom";
+
+
+const TARGET_COUNT = 20;
 
 function Quiz(props) {
 	const [questionSeen, setQuestionsSeen] = useState([])
 	const randomIndex = () => {
 		var idx = -1;
-		while ( questionSeen.includes(idx = Math.floor(Math.random()*quizData.length)) ) {}
+		while (questionSeen.includes(idx = Math.floor(Math.random() * quizData.length))) { }
 		return idx;
 	}
 
@@ -18,7 +22,7 @@ function Quiz(props) {
 
 
 	const nextQuestion = () => {
-		setCorrectAnswerCount( correctAnswerCount + (quizData[currentIdx].answers[selected].correct ? 1 : 0) );
+		setCorrectAnswerCount(correctAnswerCount + (quizData[currentIdx].answers[selected].correct ? 1 : 0));
 
 		questionSeen.push(currentIdx)
 		setQuestionsSeen(questionSeen);
@@ -26,24 +30,73 @@ function Quiz(props) {
 		setSelected(-1);
 	}
 
+	const reset = () => {
+		setCorrectAnswerCount(0);
+		setQuestionsSeen([]);
+		setCurrentIdx(randomIndex());
+		setSelected(-1);
+	}
 
-	const TARGET_COUNT = 20;
+	return (
+		questionSeen.length >= TARGET_COUNT ?
+			<ResultsPage correctCount={correctAnswerCount} reset={reset} /> :
+			<QuizItem answeredQuestionCount={questionSeen.length + 1} selected={selected} setSelected={setSelected} quizItemData={quizData[currentIdx]} nextQuestion={nextQuestion} />
 
-	const header = language == "ro" ? "Selectează varianta corectă" : "Выберите правильный вариант ответа"
+	)
+}
+
+function ResultsPage(props) {
+	const { language } = useLanguage()
+	const { correctCount, reset } = props
+	const percent = ((correctCount / TARGET_COUNT) * 100).toFixed(2)
+
+	const textRo = percent > 50 ? "Ați susținut examenul de constituție" : "Nu ați susținut examenul  de constituție. Mai incercați"
+	const textRu = percent > 50 ? "Вы успешно сдали экзамен на знание конституции" : "Вы не сдали экзамен на знание конституции. Пробуйте еще"
+
+	const style = {
+		'width' : "25%"
+	}
+	return (
+		<div className="container">
+			<div className="px-4 py-2 my-5 text-center">
+				<h1 className="display-5 fw-bold">{percent}%</h1>
+				<div className="progress">
+					<div className={"progress-bar " + percent > 50 ? "bg-success" : "bg-warning"} role="progressbar" style={style} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+				<div className="col-lg-8 mx-auto mt-3">
+					<p className="lead mb-4">{language == "ro" ? textRo : textRu}</p>
+
+					<div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+
+						<button type="button" className="btn btn-success btn-lg px-4 me-sm-3" onClick={() => reset()}>
+							<i className="bi-arrow-clockwise me-3"></i>{language == "ro" ? "Examen nou" : "Повторить"}
+						</button>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	)
+}
+
+function QuizItem(props) {
+	const { language } = useLanguage()
+	const { answeredQuestionCount, selected, setSelected, quizItemData, nextQuestion } = props
 	return (
 		<div className="container mt-3">
 			<div className="card">
 				<div className="card-header">
 					<div class="row">
 						<div class="col-md-6">
-							{header}
+							{language == "ro" ? "Selectează varianta corectă" : "Выберите правильный вариант ответа"}
 						</div>
 						<div class="col-md-6">
 							<div className="d-grid gap-2 d-md-flex justify-content-md-end fw-light text-muted">
 								{(language === "ro") ?
-									"Întrebarea " + (questionSeen.length + 1) + " din " + TARGET_COUNT
+									"Întrebarea " + (answeredQuestionCount) + " din " + TARGET_COUNT
 									:
-									"Вопрос " + (questionSeen.length + 1) + " из " + TARGET_COUNT
+									"Вопрос " + (answeredQuestionCount) + " из " + TARGET_COUNT
 								}
 							</div>
 
@@ -52,11 +105,11 @@ function Quiz(props) {
 
 				</div>
 				<div className="card-body">
-					<QuizItem data={quizData[currentIdx]} selected={selected} setSelected={setSelected} />
+					<QuizData data={quizItemData} selected={selected} setSelected={setSelected} />
 
 					{(selected != -1) ? (
 						<div className="d-grid gap-2 d-md-flex justify-content-md-end mt-2 pt-3">
-							<button className="btn btn-success me-md-2" type="button" onClick={ () => nextQuestion()}>
+							<button className="btn btn-success me-md-2" type="button" onClick={() => nextQuestion()}>
 								<i className="bi-arrow-right-square-fill me-3"></i>
 								{(language === "ro") ? "Următoare intrebare" : "Следующий вопрос"}
 							</button>
@@ -71,7 +124,7 @@ function Quiz(props) {
 	)
 }
 
-function QuizItem(props) {
+function QuizData(props) {
 	const { language } = useLanguage()
 	const { data, selected, setSelected } = props
 
