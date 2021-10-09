@@ -969,8 +969,8 @@ export const quizData = [
 
 	{
 		question: {
-			"ro": "Parlamentul poate fi dizolvat",
-			"ru": ""
+			"ro": "Parlamentul poate fi dizolvat...",
+			"ru": "Парламент может быть распущен..."
 		},
 		answers: [
 			{
@@ -1324,7 +1324,7 @@ export const quizData = [
 	{
 		question: {
 			"ro": "Legea organică care reglementează statutul special al unităţii teritoriale autonome Găgăuzia poate fi modificată cu votul a ... din numărul deputaţilor aleşi în Parlament.",
-			"ru": ""
+			"ru": "Изменения в органический закон, регламентирующий особый статус автономно-территориального образования Гагаузия, принимаются ... голосов избранных депутатов Парламента."
 		},
 		answers: [
 			{
@@ -1774,31 +1774,323 @@ export const quizData = [
 			}
 		]
 	},
-	
 
 
 
-{
-	question: {
-		"ro": "Legea privind modificarea Constituţiei se adoptă cu votul ... din deputaţi",
-		"ru": "Закон о внесении изменений в Конституцию принимается ... голосов депутатов."
+
+	{
+		question: {
+			"ro": "Legea privind modificarea Constituţiei se adoptă cu votul ... din deputaţi",
+			"ru": "Закон о внесении изменений в Конституцию принимается ... голосов депутатов."
+		},
+		answers: [
+			{
+				"ro": "2/3",
+				"ru": "2/3",
+				"correct": true
+			},
+			{
+				"ro": "1/3",
+				"ru": "1/3"
+			},
+			{
+				"ro": "50% + 1",
+				"ru": "50% + 1"
+			}
+		]
 	},
-	answers: [
-		{
-			"ro": "2/3",
-			"ru": "2/3",
-			"correct": true
+
+
+	{
+		question: {
+			"ro": "Pedeapsa cu moartea în Republica Moldova:",
+			"ru": "Смертная казнь в Республике Молдова:"
 		},
-		{
-			"ro": "1/3",
-			"ru": "1/3"
+		answers: [
+			{
+				"ro": "Este abolită (interzisă)",
+				"ru": "Запрещена",
+				"correct": true
+			},
+			{
+				"ro": "Este interzisă  temporar",
+				"ru": "Временно запрещена"
+			},
+			{
+				"ro": "Este în vigoare  (se aplică)",
+				"ru": "Применяется"
+			}
+		]
+	},
+
+
+	{
+		question: {
+			"ro": "Dreptul persoanei de a avea acces la orice informaţie de interes public:",
+			"ru": "Право человека на доступ к любой информации представляющей собой информацию касающейся общественных дел^ "
 		},
-		{
-			"ro": "50% + 1",
-			"ru": "50% + 1"
-		}
-	]
-},
+		answers: [
+			{
+				"ro": "Poate fi realizat numai în baza hotărîrii instanţei de judecată",
+				"ru": "Может быть реализовано на основе судебного решения"
+			},
+			{
+				"ro": "Nu poate fi îngrădit",
+				"ru": "Не может быть ограничено",
+				"correct": true
+			},
+			{
+				"ro": "Se poate realiza numai prin acordul autorităţii ce deţine informaţia.",
+				"ru": "Может быть реализовано только с согласия инстанции, владеющей информацией"
+			}
+		]
+	},
+
+
+
+	{
+		question: {
+			"ro": "În exercitarea atribuţiilor sale, Guvernul se conduce de programul de activitate, acceptat de către:",
+			"ru": "При осуществлении своих полномочий Правительство руководствуется программой деятельности, одобренной:"
+		},
+		answers: [
+			{
+				"ro": "Nu are un program de activitate aprobat drept condiţie de funcţionare",
+				"ru": "Среди законных требований к Правительству, плана, одобренного кем-либо, нет."
+			},
+			{
+				"ro": "Preşedintele Parlamentului",
+				"ru": "Президентом Парламента"
+			},
+			{
+				"ro": "Preşedintele Republicii Moldova",
+				"ru": "Президентом Республики Молдова"
+			},
+			{
+				"ro": "Parlament",
+				"ru": "Парламентом",
+				"correct": true
+			}
+		]
+	},
+
+
+	{
+		question: {
+			"ro": "Conform Constituţiei, durata săptămînii de muncă este de cel mult: ",
+			"ru": "Согласно Конституции, продолжительность рабочей недели не должна превышать: "
+		},
+		answers: [
+			{
+				"ro": "40 de ore",
+				"ru": "40 часов",
+				"correct": true
+			},
+			{
+				"ro": "30 de ore",
+				"ru": "30 часов"
+			},
+			{
+				"ro": "35 de ore",
+				"ru": "35 часов"
+			}
+		]
+	},
+
+
+	{
+		question: {
+			"ro": "Problemele cetăţeniei Republicii Moldova sunt soluţionate de:",
+			"ru": "Вопросы гражданства Республики Молдова и предоставления политического убежища решаются:"
+		},
+		answers: [
+			{
+				"ro": "Ministrul de Interne",
+				"ru": "Министерством Внутренних Дел"
+			},
+			{
+				"ro": "Preşedintele Republicii Moldova ",
+				"ru": "Президентом Республики Молдова",
+				"correct": true
+			},
+			{
+				"ro": "Parlament",
+				"ru": "Парламентом"
+			},
+			{
+				"ro": "Prim-ministru",
+				"ru": "Премьер-министром"
+			},
+		]
+	},
+
+
+
+	{
+		question: {
+			"ro": "Cetăţenii au dreptul să se adreseze autorităţilor publice prin:",
+			"ru": "Граждане имеют право обращаться к властям посредством:"
+		},
+		answers: [
+			{
+				"ro": "Scrisori anonime.",
+				"ru": "Анонимных писем"
+			},
+			{
+				"ro": "Petiţii formulate numai în numele semnatarilor",
+				"ru": "Петициями только от своего имени.",
+				"correct": true
+			},
+			{
+				"ro": "Cereri de chemare în judecată",
+				"ru": "Запросами в суд"
+			}
+		]
+	},
+
+
+
+	{
+		question: {
+			"ro": "Preşedintele Republicii Moldova reprezintă:",
+			"ru": "Президент Республики Молдова представляет:"
+		},
+		answers: [
+			{
+				"ro": "Statul",
+				"ru": "Государство",
+				"correct": true
+			},
+			{
+				"ro": "Parlamentul",
+				"ru": "Парламент"
+			},
+			{
+				"ro": "Guvernul",
+				"ru": "Правительство"
+			},
+			{
+				"ro": "Poporul",
+				"ru": "Народ"
+			}
+		]
+	},
+
+	{
+		question: {
+			"ro": "Percheziţionarea, reţinerea sau arestarea unei persoane sunt permise în următoarele cazuri: ",
+			"ru": "Обыск, задержание или арест лица допускаются: "
+		},
+		answers: [
+			{
+				"ro": "Numai în cazuri prevăzute de lege",
+				"ru": "Только в случаях и порядке, предусмотренных законом.",
+				"correct": true
+			},
+			{
+				"ro": "Oricând va dori reprezentantul organelor de ordine publică",
+				"ru": "По требованию органов публичного порядка"
+			}
+		]
+	},
+	{
+		question: {
+			"ro": "În cursul unui an, Parlamentul poate fi dizolvat:",
+			"ru": "В течение одного года Парламент может быть распущен:"
+		},
+		answers: [
+			{
+				"ro": "De cîte ori va fi necesar",
+				"ru": "Без ограничений"
+			},
+			{
+				"ro": "De 3 ori",
+				"ru": "Трижды"
+			},
+			{
+				"ro": "O singură dată",
+				"ru": "Один раз",
+				"correct": true
+			},
+			{
+				"ro": "De 2 ori",
+				"ru": "Дважды"
+			},
+		]
+	},
+
+
+	{
+		question: {
+			"ro": "Cetăţenii Republicii Moldova se bucură de protecţia statului:",
+			"ru": "Граждане Республики Молдова пользуются защитой государства"
+		},
+		answers: [
+			{
+				"ro": "Pe teritoriul Republicii Moldova",
+				"ru": "На территории Республики Молдова"
+			},
+			{
+				"ro": "Pe teritoriul altor state ",
+				"ru": "На территории других государств"
+			},
+			{
+				"ro": "Atît în ţară, cît şi în străinătate",
+				"ru": "как внутри страны, так и за ее пределами",
+				"correct": true
+			}
+		]
+	},
+
+
+	{
+		question: {
+			"ro": "Legile Republicii Moldova sunt promulgate de către:",
+			"ru": "Промульгация законов Республики Молдова осуществляется:"
+		},
+		answers: [
+			{
+				"ro": "Parlament",
+				"ru": "Парламентом"
+			},
+			{
+				"ro": "Preşedintele Parlamentului",
+				"ru": "Президентом парламента"
+			},
+			{
+				"ro": "Guvern",
+				"ru": "Правительство"
+			},
+			{
+				"ro": "Preşedintele Republicii Moldova",
+				"ru": "Президентом Республики Молдова",
+				"correct": true
+			}
+		]
+	},
+
+
+	{
+		question: {
+			"ro": "Preşedintele Republicii Moldova adresează Parlamentului mesaje cu privire la:",
+			"ru": "Президент Республики Молдова обращается к Парламенту с посланиями по вопросам:"
+		},
+		answers: [
+			{
+				"ro": "Principalele probleme ale naţiunii",
+				"ru": "Общенационального значения",
+				"correct": true
+			},
+			{
+				"ro": "Deplasările de serviciu",
+				"ru": "Командировок"
+			},
+			{
+				"ro": "Situaţia economică în societate",
+				"ru": "Экономической ситуацией в обществе"
+			}
+		]
+	},
 ]
 
 
