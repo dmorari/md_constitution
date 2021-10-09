@@ -439,7 +439,7 @@ export const quizData = [
 		},
 		answers: [
 			{
-				"ro": "7 anu",
+				"ro": "7 ani",
 				"ru": "7 лет",
 				"correct": true
 			},
