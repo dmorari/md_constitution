@@ -147,12 +147,12 @@ export const quizData = [
 		answers: [
 			{
 				"ro": "Da",
-				"ru": "Да",
-				"correct": true
+				"ru": "Да"
 			},
 			{
 				"ro": "Nu",
-				"ru": "Нет"
+				"ru": "Нет",
+				"correct": true
 			}
 		]
 	},
