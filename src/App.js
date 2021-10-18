@@ -15,6 +15,7 @@ function App(props) {
       <Router>
         <div>
           <Navbar />
+          <Route exact path="/" component={Home} />
           <Route exact path={origin + "/"} component={Home} />
           <Route path={origin + "/quiz"} component={Quiz} />
 
