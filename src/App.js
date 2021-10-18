@@ -6,16 +6,17 @@ import Home from './Home';
 import './index.css';
 import Navbar from './Navbar';
 import Quiz from "./Quiz";
-function App() {
+function App(props) {
   const [language, setLanguage] = useState("ro");
+  const origin = (window.location.origin.includes("github")) ? "/md_constitution" : "";
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage}}>
       <Router>
         <div>
           <Navbar />
-          <Route exact path="/" component={Home} />
-          <Route path="/quiz" component={Quiz} />
+          <Route exact path={origin + "/"} component={Home} />
+          <Route path={origin + "/quiz"} component={Quiz} />
 
         </div>
       </Router>
