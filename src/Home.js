@@ -5,18 +5,18 @@ import { useLanguage } from "./context/language";
 
 function Home(props) {
 	const { language } = useLanguage()
-	const title = (language === "ro") ? "Fiecare poate fi Moldovean" : "Каждый может быть молдованом"
+	const title = (language === "ro") ? "Pentru să fii Moldovean" : "Чтобы быть Молдованом"
 	const content = (language === "ro") ? 
-	"Republica Moldova e o țară de drept. Să fii moldovan - să-ți stii constituția." 
-	: "Республика Молдова - государство закона. Быть молдованом - знать свою констититуцию."
+	"Trebuie să știi constituția. Așa sunt cerințele pentru străini care dorest să-și dobândească cetățenia RM." 
+	: "Надо знать конституцию. Таковы требавания к иностранцам, желающими стать гражданами РМ."
 	
 	const pressButton = (language === "ro") ? 
-	"Apasă butonul din jos să te antrenezi" 
-	: "Нажми кнопну ниже, чтобы начать тренировку"
+	"Acest test conține 20 de întrebari selectate întâmplător" 
+	: "Тест состоит из 20 случайно отобранных вопросов."
 
 	const begin = (language === "ro") ? 
-	"Vreau sa devin Moldoveancă!" 
-	: "Хочу стать Молдованкой!"
+	"Vreau sa devin Moldovean(că)!" 
+	: "Хочу стать Молдован(ом)кой!"
 
 	return (
 	  <>

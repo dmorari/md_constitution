@@ -77,6 +77,7 @@ function ResultsPage(props) {
 				</div>
 				<div className="col-lg-8 mx-auto mt-3">
 					<p className="lead mb-4">{language == "ro" ? textRo : textRu}</p>
+					<p className=" mb-4 fw-light">{language == "ro" ? "În examenul nou întrebările voi fi diferite." : "В повторном экзамене будут другие вопросы."} </p>
 
 					<div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
 
