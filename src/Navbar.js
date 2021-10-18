@@ -8,6 +8,8 @@ import icons from 'bootstrap-icons/bootstrap-icons.svg';
 import { useLanguage } from "./context/language";
 
 function Navbar(props) {
+	const origin = (window.location.origin.includes("github")) ? "/md_constitution" : "";
+
 	const { language, setLanguage } = useLanguage()
 	const ruButtonStyle = (language == "ru") ? "btn btn-info me-2" : "btn btn-outline-dark me-2"
 	const roButtonStyle = (language == "ro") ? "btn btn-info" : "btn btn-outline-dark"
@@ -15,7 +17,7 @@ function Navbar(props) {
 		<nav className="navbar navbar-expand-lg navbar-light bg-light" >
 			<div className="container">
 				<div className="navbar-header">
-					<Link className="navbar-brand" to="/">
+					<Link className="navbar-brand" to={origin + "/"}>
 						<img src={logo} alt="" height="40" className="d-inline-block align-top" />
 					</Link>
 				</div>
