@@ -749,7 +749,7 @@ export const quizData = [
 
 	{
 		question: {
-			"ro": "Cine promulgă legile adoptate câtre parlament?",
+			"ro": "Cine promulgă legile adoptate către parlament?",
 			"ru": "Кто промульгирует законы, принятые парламентом?"
 		},
 		answers: [
@@ -772,7 +772,7 @@ export const quizData = [
 
 	{
 		question: {
-			"ro": "Când legile adoptate câtre parlament întră în vigoare?",
+			"ro": "Când legile adoptate către parlament întră în vigoare?",
 			"ru": "Когда законы, принятые парламентом, вступают в силу?"
 		},
 		answers: [
@@ -921,7 +921,7 @@ export const quizData = [
 		},
 		answers: [
 			{
-				"ro": "7 anu",
+				"ro": "7 ani",
 				"ru": "7 лет",
 			},
 			{
@@ -1184,7 +1184,7 @@ export const quizData = [
 
 	{
 		question: {
-			"ro": "un candidat pentru funcţia de Prim-ministru este desemnat câtre ...",
+			"ro": "un candidat pentru funcţia de Prim-ministru este desemnat către ...",
 			"ru": "кандидатуру на должность Премьер-министра выдвигает ..."
 		},
 		answers: [
@@ -1657,7 +1657,7 @@ export const quizData = [
 
 	{
 		question: {
-			"ro": "Judecătorii Curții Constituţionale sunt numiți în funcție câtre ...",
+			"ro": "Judecătorii Curții Constituţionale sunt numiți în funcție către ...",
 			"ru": "Судьи Конституционного Суда назначаются ..."
 		},
 		answers: [
