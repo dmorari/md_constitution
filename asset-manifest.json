@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/md_constitution/static/css/main.f9889830.chunk.css",
+    "main.js": "/md_constitution/static/js/main.4592c1d1.chunk.js",
+    "main.js.map": "/md_constitution/static/js/main.4592c1d1.chunk.js.map",
+    "runtime-main.js": "/md_constitution/static/js/runtime-main.9379f3a3.js",
+    "runtime-main.js.map": "/md_constitution/static/js/runtime-main.9379f3a3.js.map",
+    "static/css/2.1fc3e715.chunk.css": "/md_constitution/static/css/2.1fc3e715.chunk.css",
+    "static/js/2.c477a5d9.chunk.js": "/md_constitution/static/js/2.c477a5d9.chunk.js",
+    "static/js/2.c477a5d9.chunk.js.map": "/md_constitution/static/js/2.c477a5d9.chunk.js.map",
+    "static/js/3.3c946d73.chunk.js": "/md_constitution/static/js/3.3c946d73.chunk.js",
+    "static/js/3.3c946d73.chunk.js.map": "/md_constitution/static/js/3.3c946d73.chunk.js.map",
+    "index.html": "/md_constitution/index.html",
+    "static/css/2.1fc3e715.chunk.css.map": "/md_constitution/static/css/2.1fc3e715.chunk.css.map",
+    "static/css/main.f9889830.chunk.css.map": "/md_constitution/static/css/main.f9889830.chunk.css.map",
+    "static/js/2.c477a5d9.chunk.js.LICENSE.txt": "/md_constitution/static/js/2.c477a5d9.chunk.js.LICENSE.txt",
+    "static/media/bootstrap-icons.svg": "/md_constitution/static/media/bootstrap-icons.81d03567.svg",
+    "static/media/bootstrap-icons.css": "/md_constitution/static/media/bootstrap-icons.dfd0ea12.woff2",
+    "static/media/flag_moldova.3ac7bad4.jpg": "/md_constitution/static/media/flag_moldova.3ac7bad4.jpg",
+    "static/media/guguta.5ff91dec.png": "/md_constitution/static/media/guguta.5ff91dec.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9379f3a3.js",
+    "static/css/2.1fc3e715.chunk.css",
+    "static/js/2.c477a5d9.chunk.js",
+    "static/css/main.f9889830.chunk.css",
+    "static/js/main.4592c1d1.chunk.js"
+  ]
+}
