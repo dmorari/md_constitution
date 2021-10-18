@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "./context/language";
 
 function Home(props) {
+
+	const origin = (window.location.origin.includes("github")) ? "/md_constitution" : "";
+
 	const { language } = useLanguage()
 	const title = (language === "ro") ? "Pentru să fii Moldovean" : "Чтобы быть Молдованом"
 	const content = (language === "ro") ? 
@@ -27,7 +30,7 @@ function Home(props) {
 			<p className="lead mb-4">{content}</p>
 			<p className=" mb-4 fw-light">{pressButton} </p>
 			<div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-			  <Link to="/quiz">
+			  <Link to={origin + "/quiz"}>
 				<button type="button" className="btn btn-success btn-lg px-4 me-sm-3"><i className="bi-trophy-fill me-3"></i>{begin}</button>
 			  </Link>
 			</div>
